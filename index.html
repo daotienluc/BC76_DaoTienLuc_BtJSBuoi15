@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .containerr {
+        max-width: 585px;
+        margin: 0 auto;
+      }
+
+      .containerr input {
+        padding: 10px 0;
+        border: 1px solid;
+        border-radius: 5px;
+      }
+
+      .bai1_content {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .containerr p {
+        background-color: #d1e7dd;
+      }
+
+      .btn_bai1 {
+        text-align: left;
+        border-bottom: 1px solid;
+      }
+    </style>
+  </head>
+  <div class="containerr">
+    <div class="text-center">
+      <div class="bai1">
+        <h2>Bài tập 1: Quản lý tuyển sinh</h2>
+        <div class="bai1_content py-3">
+          <input type="text" placeholder="Điểm chuẩn" class="py-2 px-1" />
+          <select id="mySelect" name="khuvuc" class="py-2 px-1">
+            <option value="option1">Chọn khu vực</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+          <select id="mySelect" name="doituong" class="py-2 px-1">
+            <option value="option1">Chọn đối tượng</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div>
+          <input type="text" placeholder="Điểm môn thứ 1" class="py-2 px-1" />
+          <input type="text" placeholder="Điểm môn thứ 2" class="py-2 px-1" />
+          <input type="text" placeholder="Điểm môn thứ 3" class="py-2 px-1" />
+        </div>
+        <div class="btn_bai1 py-3">
+          <button class="btn btn-success" id="kqBai1">Kết quả</button>
+        </div>
+        <p id="noidung1"></p>
+      </div>
+      <div class="bai2">
+        <h2>Bài tập 2: Tính tiền điện</h2>
+        <div class="bai1_content py-3">
+          <input
+            type="text"
+            placeholder="Nhập họ và tên"
+            id="hoTen"
+            class="py-2 px-1"
+          />
+          <input
+            type="text"
+            placeholder="Nhập số KW"
+            id="soKw"
+            class="py-2 px-1"
+          />
+        </div>
+        <div class="btn_bai1 py-3">
+          <button class="btn btn-success" id="btnTinhTienDien">
+            Tính tiền điện
+          </button>
+        </div>
+        <p id="noidung2"></p>
+        <p id="tenNguoi"></p>
+      </div>
+      <div class="bai3">
+        <h2>Bài 3: Tính thuế thu nhập cá nhân</h2>
+        <div class="bai1_content py-3">
+          <input
+            type="text"
+            placeholder="Nhập họ và tên"
+            id="nhapHoVaTen"
+            class="py-2 px-1"
+          />
+          <input
+            type="number"
+            placeholder="Tổng thu nhập năm"
+            id="tongThuNhapNam"
+            class="py-2 px-1"
+          />
+          <input
+            type="number"
+            placeholder="Số người phụ thuộc"
+            id="soNguoiPhuThuoc"
+            class="py-2 px-1"
+          />
+        </div>
+        <div class="btn_bai1 py-3">
+          <button class="btn btn-success" id="btnTinhTienThue">
+            Tính tiền thuế
+          </button>
+        </div>
+        <p id="kqBai3"></p>
+      </div>
+
+      <h1>Bài tập 4: Tính Hóa Đơn Cáp</h1>
+      <form id="billingForm">
+        <div class="bai1_content align-items-center my-3">
+          <label for="customerId">Mã Khách Hàng:</label
+          ><input type="text" id="customerId" style="padding: 8px 0" /><label
+            for="customerType"
+            >Loại Khách Hàng:</label
+          ><select id="customerType" class="py-2 px-1" required>
+            <option value="residential">Nhà dân</option>
+            <option value="business">Doanh nghiệp</option>
+          </select>
+        </div>
+        <div class="bai1_content">
+          <label for="premiumChannels">Số Kênh Cao Cấp:</label>
+          <input type="number" id="premiumChannels" min="0" required />
+          <div id="connectionField" class="hidden">
+            <label for="connections">Số Kết Nối:</label
+            ><input type="number" id="connections" min="0" />
+          </div>
+        </div>
+        <div class="btn_bai1 py-3">
+          <button type="button" class="btn btn-success" id="btnTinhHoaDon">
+            Tính Hóa Đơn
+          </button>
+        </div>
+      </form>
+      <h2>Hóa Đơn:</h2>
+      <p id="result"></p>
+    </div>
+  </div>
+  <body>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
